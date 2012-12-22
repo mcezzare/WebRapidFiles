@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --------------------------------------------------------------------------------------------------------------------------
 WEB RAPID FILES 
 Versão:1.1
@@ -93,3 +94,9 @@ Se você pretende utilizar essa WebApp dentro de seu site, isso talvez  exija fa
 
 
 
+=======
+WebRapidFiles
+=============
+
+OnLine Catalog of files, groups and leves , forget send big attachments. test this.Peace
+>>>>>>> 28dfca5d13620e20b3d621bc36325780c784247c
