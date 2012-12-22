@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class ArquivoDAO | delageUploadsMVC</title>
+
+	<script type="text/javascript" src="resources/combined.js?3581878141"></script>
+	<script type="text/javascript" src="elementlist.js?3506992519"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Admin.html">Admin</a></li>
+				<li><a href="class-AdminController.html">AdminController</a></li>
+				<li><a href="class-AjaxArquivos.html">AjaxArquivos</a></li>
+				<li><a href="class-AjaxArquivosFs.html">AjaxArquivosFs</a></li>
+				<li><a href="class-AjaxGrupos.html">AjaxGrupos</a></li>
+				<li><a href="class-AjaxLogs.html">AjaxLogs</a></li>
+				<li><a href="class-AjaxVerificaArquivos.html">AjaxVerificaArquivos</a></li>
+				<li><a href="class-Arquivo.html">Arquivo</a></li>
+				<li><a href="class-ArquivoController.html">ArquivoController</a></li>
+				<li class="active"><a href="class-ArquivoDAO.html">ArquivoDAO</a></li>
+				<li><a href="class-Autoloader.html">Autoloader</a></li>
+				<li><a href="class-Conexao.html">Conexao</a></li>
+				<li><a href="class-Config.html" class="invalid">Config</a></li>
+				<li><a href="class-FormUtils.html">FormUtils</a></li>
+				<li><a href="class-Grupo.html">Grupo</a></li>
+				<li><a href="class-GrupoController.html">GrupoController</a></li>
+				<li><a href="class-GrupoDAO.html">GrupoDAO</a></li>
+				<li><a href="class-IndexAdmin.html">IndexAdmin</a></li>
+				<li><a href="class-IndexArquivos.html">IndexArquivos</a></li>
+				<li><a href="class-IndexGrupos.html">IndexGrupos</a></li>
+				<li><a href="class-IndexLogger.html">IndexLogger</a></li>
+				<li><a href="class-IndexUploads.html">IndexUploads</a></li>
+				<li><a href="class-IndexUsuarios.html">IndexUsuarios</a></li>
+				<li><a href="class-Logger.html">Logger</a></li>
+				<li><a href="class-LoggerController.html">LoggerController</a></li>
+				<li><a href="class-LoggerDAO.html">LoggerDAO</a></li>
+				<li><a href="class-LoginController.html">LoginController</a></li>
+				<li><a href="class-MailUtils.html">MailUtils</a></li>
+				<li><a href="class-PostController.html">PostController</a></li>
+				<li><a href="class-RecuperaSenha.html">RecuperaSenha</a></li>
+				<li><a href="class-ResetPass.html">ResetPass</a></li>
+				<li><a href="class-ResetPassController.html">ResetPassController</a></li>
+				<li><a href="class-SessionController.html">SessionController</a></li>
+				<li><a href="class-Setup.html">Setup</a></li>
+				<li><a href="class-Upload.html">Upload</a></li>
+				<li><a href="class-UploadController.html">UploadController</a></li>
+				<li><a href="class-Uploads.html">Uploads</a></li>
+				<li><a href="class-Usuario.html">Usuario</a></li>
+				<li><a href="class-UsuarioController.html">UsuarioController</a></li>
+				<li><a href="class-UsuarioDAO.html">UsuarioDAO</a></li>
+				<li><a href="class-Utils.html">Utils</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-_generateRandom.html">_generateRandom</a></li>
+				<li><a href="function-checkGroup.html">checkGroup</a></li>
+				<li><a href="function-checkNivel.html">checkNivel</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ArquivoDAO</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+		<b>Located at</b> <a href="source-class-ArquivoDAO.html#10-280" title="Go to source code">app/dao/ArquivoDAO.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getListaArquivos" id="_getListaArquivos">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getListaArquivos">#</a>
+		<code><a href="source-class-ArquivoDAO.html#12-47" title="Go to source code">getListaArquivos</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTotalArquivos" id="_getTotalArquivos">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTotalArquivos">#</a>
+		<code><a href="source-class-ArquivoDAO.html#49-64" title="Go to source code">getTotalArquivos</a>( <span><code><a href="class-Arquivo.html">Arquivo</a></code> <var>$arquivoFiltro</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getListaArquivosPaginados" id="_getListaArquivosPaginados">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getListaArquivosPaginados">#</a>
+		<code><a href="source-class-ArquivoDAO.html#66-116" title="Go to source code">getListaArquivosPaginados</a>( <span>mixed <var>$primeiroRegistro</var></span>, <span>mixed <var>$numPorPagina</var></span>, <span><code><a href="class-Arquivo.html">Arquivo</a></code> <var>$arquivoFiltro</var></span>, <span>mixed <var>$order</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="montaFiltroPaginacao" id="_montaFiltroPaginacao">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_montaFiltroPaginacao">#</a>
+		<code><a href="source-class-ArquivoDAO.html#119-140" title="Go to source code">montaFiltroPaginacao</a>( <span><code><a href="class-Arquivo.html">Arquivo</a></code> <var>$arquivoFiltro</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getListaTipoArquivosExistentes" id="_getListaTipoArquivosExistentes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getListaTipoArquivosExistentes">#</a>
+		<code><a href="source-class-ArquivoDAO.html#142-157" title="Go to source code">getListaTipoArquivosExistentes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getListaDatasArquivosExistentes" id="_getListaDatasArquivosExistentes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getListaDatasArquivosExistentes">#</a>
+		<code><a href="source-class-ArquivoDAO.html#159-174" title="Go to source code">getListaDatasArquivosExistentes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getListaUsuariosArquivosExistentes" id="_getListaUsuariosArquivosExistentes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getListaUsuariosArquivosExistentes">#</a>
+		<code><a href="source-class-ArquivoDAO.html#176-192" title="Go to source code">getListaUsuariosArquivosExistentes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeArquivos" id="_removeArquivos">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeArquivos">#</a>
+		<code><a href="source-class-ArquivoDAO.html#194-258" title="Go to source code">removeArquivos</a>( <span>mixed <var>$arquivos</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addArquivo" id="_addArquivo">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addArquivo">#</a>
+		<code><a href="source-class-ArquivoDAO.html#260-278" title="Go to source code">addArquivo</a>( <span><code><a href="class-Arquivo.html">Arquivo</a></code> <var>$arquivo</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		delageUploadsMVC API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

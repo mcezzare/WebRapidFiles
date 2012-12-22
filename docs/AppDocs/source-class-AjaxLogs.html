@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File app/ajax/logs.php | delageUploadsMVC</title>
+
+	<script type="text/javascript" src="resources/combined.js?3581878141"></script>
+	<script type="text/javascript" src="elementlist.js?3506992519"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Admin.html">Admin</a></li>
+				<li><a href="class-AdminController.html">AdminController</a></li>
+				<li><a href="class-AjaxArquivos.html">AjaxArquivos</a></li>
+				<li><a href="class-AjaxArquivosFs.html">AjaxArquivosFs</a></li>
+				<li><a href="class-AjaxGrupos.html">AjaxGrupos</a></li>
+				<li class="active"><a href="class-AjaxLogs.html">AjaxLogs</a></li>
+				<li><a href="class-AjaxVerificaArquivos.html">AjaxVerificaArquivos</a></li>
+				<li><a href="class-Arquivo.html">Arquivo</a></li>
+				<li><a href="class-ArquivoController.html">ArquivoController</a></li>
+				<li><a href="class-ArquivoDAO.html">ArquivoDAO</a></li>
+				<li><a href="class-Autoloader.html">Autoloader</a></li>
+				<li><a href="class-Conexao.html">Conexao</a></li>
+				<li><a href="class-Config.html" class="invalid">Config</a></li>
+				<li><a href="class-FormUtils.html">FormUtils</a></li>
+				<li><a href="class-Grupo.html">Grupo</a></li>
+				<li><a href="class-GrupoController.html">GrupoController</a></li>
+				<li><a href="class-GrupoDAO.html">GrupoDAO</a></li>
+				<li><a href="class-IndexAdmin.html">IndexAdmin</a></li>
+				<li><a href="class-IndexArquivos.html">IndexArquivos</a></li>
+				<li><a href="class-IndexGrupos.html">IndexGrupos</a></li>
+				<li><a href="class-IndexLogger.html">IndexLogger</a></li>
+				<li><a href="class-IndexUploads.html">IndexUploads</a></li>
+				<li><a href="class-IndexUsuarios.html">IndexUsuarios</a></li>
+				<li><a href="class-Logger.html">Logger</a></li>
+				<li><a href="class-LoggerController.html">LoggerController</a></li>
+				<li><a href="class-LoggerDAO.html">LoggerDAO</a></li>
+				<li><a href="class-LoginController.html">LoginController</a></li>
+				<li><a href="class-MailUtils.html">MailUtils</a></li>
+				<li><a href="class-PostController.html">PostController</a></li>
+				<li><a href="class-RecuperaSenha.html">RecuperaSenha</a></li>
+				<li><a href="class-ResetPass.html">ResetPass</a></li>
+				<li><a href="class-ResetPassController.html">ResetPassController</a></li>
+				<li><a href="class-SessionController.html">SessionController</a></li>
+				<li><a href="class-Setup.html">Setup</a></li>
+				<li><a href="class-Upload.html">Upload</a></li>
+				<li><a href="class-UploadController.html">UploadController</a></li>
+				<li><a href="class-Uploads.html">Uploads</a></li>
+				<li><a href="class-Usuario.html">Usuario</a></li>
+				<li><a href="class-UsuarioController.html">UsuarioController</a></li>
+				<li><a href="class-UsuarioDAO.html">UsuarioDAO</a></li>
+				<li><a href="class-Utils.html">Utils</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-_generateRandom.html">_generateRandom</a></li>
+				<li><a href="function-checkGroup.html">checkGroup</a></li>
+				<li><a href="function-checkNivel.html">checkNivel</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="class-AjaxLogs.html" title="Summary of AjaxLogs"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1">  1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2">  2: </a><span class="php-keyword2">error_reporting</span>(<span class="php-quote">'E_ALL'</span>);
+</span><span id="3" class="l"><a class="l" href="#3">  3: </a>@<span class="php-keyword2">session_start</span>();
+</span><span id="4" class="l"><a class="l" href="#4">  4: </a><span class="php-keyword1">class</span> <a id="AjaxLogs" href="#AjaxLogs">AjaxLogs</a>{
+</span><span id="5" class="l"><a class="l" href="#5">  5: </a>    
+</span><span id="6" class="l"><a class="l" href="#6">  6: </a>}
+</span><span id="7" class="l"><a class="l" href="#7">  7: </a>
+</span><span id="8" class="l"><a class="l" href="#8">  8: </a><span class="php-keyword1">require_once</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>] . <span class="php-quote">'/lib/config.php'</span>);
+</span><span id="9" class="l"><a class="l" href="#9">  9: </a><span class="php-keyword1">require_once</span> (<span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>] . <span class="php-quote">'/lib/block.php'</span>);
+</span><span id="10" class="l"><a class="l" href="#10"> 10: </a>
+</span><span id="11" class="l"><a class="l" href="#11"> 11: </a><span class="php-keyword1">require_once</span> (<span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>] . <span class="php-quote">'/lib/Utils.class.php'</span>);
+</span><span id="12" class="l"><a class="l" href="#12"> 12: </a>
+</span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-keyword1">require_once</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>] . <span class="php-quote">'/app/model/Logger.class.php'</span>);
+</span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-keyword1">require_once</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'DOCUMENT_ROOT'</span>] . <span class="php-quote">'/app/controller/LoggerController.php'</span>);
+</span><span id="15" class="l"><a class="l" href="#15"> 15: </a>
+</span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-var">$logC</span> = <span class="php-keyword1">new</span> LoggerController();
+</span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-var">$log</span> = <span class="php-keyword1">new</span> Logger();
+</span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-var">$util</span> = <span class="php-keyword1">new</span> Utils();
+</span><span id="19" class="l"><a class="l" href="#19"> 19: </a>
+</span><span id="20" class="l"><a class="l" href="#20"> 20: </a><span class="php-comment">//$arrLogs=$logC-&gt;getLogs($log);</span>
+</span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-comment">//print_r($arrLogs);</span>
+</span><span id="22" class="l"><a class="l" href="#22"> 22: </a>
+</span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'pagesize'</span>])) {
+</span><span id="24" class="l"><a class="l" href="#24"> 24: </a>    <span class="php-var">$numPorPagina</span> = <span class="php-var">$_REQUEST</span>[<span class="php-quote">'pagesize'</span>];
+</span><span id="25" class="l"><a class="l" href="#25"> 25: </a>} <span class="php-keyword1">else</span> {
+</span><span id="26" class="l"><a class="l" href="#26"> 26: </a>    <span class="php-var">$numPorPagina</span> = <span class="php-num">20</span>;
+</span><span id="27" class="l"><a class="l" href="#27"> 27: </a>}
+</span><span id="28" class="l"><a class="l" href="#28"> 28: </a><span class="php-comment">//base p/ gerar os links</span>
+</span><span id="29" class="l"><a class="l" href="#29"> 29: </a><span class="php-var">$basePage</span> = <span class="php-var">$_SESSION</span>[<span class="php-quote">'usuario'</span>][<span class="php-quote">'view'</span>] . <span class="php-quote">&quot;?section=arquivos&amp;action=index&quot;</span>;
+</span><span id="30" class="l"><a class="l" href="#30"> 30: </a>
+</span><span id="31" class="l"><a class="l" href="#31"> 31: </a><span class="php-comment">// acrescenta o parametro pagina no link, o valor sera gerado ao carregar</span>
+</span><span id="32" class="l"><a class="l" href="#32"> 32: </a><span class="php-var">$basePage</span> .=<span class="php-quote">&quot;&amp;pagina=&quot;</span>;
+</span><span id="33" class="l"><a class="l" href="#33"> 33: </a>
+</span><span id="34" class="l"><a class="l" href="#34"> 34: </a><span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'pagina'</span>])) {
+</span><span id="35" class="l"><a class="l" href="#35"> 35: </a>    <span class="php-var">$pagina</span> = <span class="php-var">$_REQUEST</span>[<span class="php-quote">'pagina'</span>];
+</span><span id="36" class="l"><a class="l" href="#36"> 36: </a>} <span class="php-keyword1">else</span> {
+</span><span id="37" class="l"><a class="l" href="#37"> 37: </a>    <span class="php-var">$pagina</span> = <span class="php-num">1</span>;
+</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>}
+</span><span id="39" class="l"><a class="l" href="#39"> 39: </a><span class="php-comment">//trava palhaçadas, como tentar passar numeros negativos na url</span>
+</span><span id="40" class="l"><a class="l" href="#40"> 40: </a><span class="php-keyword1">if</span> (<span class="php-var">$pagina</span> &lt;= <span class="php-num">0</span>) {
+</span><span id="41" class="l"><a class="l" href="#41"> 41: </a><span class="php-comment">//    header(&quot;Location:&quot; . $basePage . &quot;1&quot;);</span>
+</span><span id="42" class="l"><a class="l" href="#42"> 42: </a>    <span class="php-var">$pagina</span> = <span class="php-num">1</span>;
+</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>}
+</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>
+</span><span id="45" class="l"><a class="l" href="#45"> 45: </a><span class="php-comment">// 1º registro do Bloco</span>
+</span><span id="46" class="l"><a class="l" href="#46"> 46: </a><span class="php-var">$primeiro</span> = (<span class="php-var">$pagina</span> * <span class="php-var">$numPorPagina</span>) - <span class="php-var">$numPorPagina</span>;
+</span><span id="47" class="l"><a class="l" href="#47"> 47: </a><span class="php-var">$logFiltro</span> = <span class="php-keyword1">new</span> Logger();
+</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>
+</span><span id="49" class="l"><a class="l" href="#49"> 49: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData'</span>] != <span class="php-num">0</span>) ?
+</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>    <span class="php-var">$logFiltro</span>-&gt;setData(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData'</span>]) 
+</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>        : <span class="php-var">$logFiltro</span>-&gt;setData(<span class="php-keyword1">null</span>);
+</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>
+</span><span id="53" class="l"><a class="l" href="#53"> 53: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logGrupo'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logGrupo'</span>] != <span class="php-num">0</span>) ?
+</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-var">$logFiltro</span>-&gt;setIdGrupo(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logGrupo'</span>]) 
+</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>        : <span class="php-var">$logFiltro</span>-&gt;setIdGrupo(<span class="php-keyword1">null</span>);
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>
+</span><span id="57" class="l"><a class="l" href="#57"> 57: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logAcao'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logAcao'</span>] != <span class="php-num">0</span>) ?
+</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>    <span class="php-var">$logFiltro</span>-&gt;setIdAcao(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logAcao'</span>]) 
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>        : <span class="php-var">$logFiltro</span>-&gt;setIdAcao(<span class="php-keyword1">null</span>);
+</span><span id="60" class="l"><a class="l" href="#60"> 60: </a>
+</span><span id="61" class="l"><a class="l" href="#61"> 61: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logUsuario'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logUsuario'</span>] != <span class="php-num">0</span>) ?
+</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    <span class="php-var">$logFiltro</span>-&gt;setIdUsuario(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logUsuario'</span>]) 
+</span><span id="63" class="l"><a class="l" href="#63"> 63: </a>        : <span class="php-var">$logFiltro</span>-&gt;setIdUsuario(<span class="php-keyword1">null</span>);
+</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
+</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>
+</span><span id="66" class="l"><a class="l" href="#66"> 66: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData1'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData1'</span>] != <span class="php-num">0</span>) ?
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-var">$logFiltro</span>-&gt;setDataStart(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData1'</span>]) 
+</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>        : <span class="php-var">$logFiltro</span>-&gt;setDataStart(<span class="php-keyword1">null</span>);
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>
+</span><span id="70" class="l"><a class="l" href="#70"> 70: </a><span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData2'</span>]) &amp;&amp; (<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData2'</span>] != <span class="php-num">0</span>) ?
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>    <span class="php-var">$logFiltro</span>-&gt;setDataEnd(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'logData2'</span>]) 
+</span><span id="72" class="l"><a class="l" href="#72"> 72: </a>        : <span class="php-var">$logFiltro</span>-&gt;setDataEnd(<span class="php-keyword1">null</span>);
+</span><span id="73" class="l"><a class="l" href="#73"> 73: </a>
+</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>
+</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>
+</span><span id="77" class="l"><a class="l" href="#77"> 77: </a><span class="php-var">$arrLogs</span> = <span class="php-var">$logC</span>-&gt;getLogsPaginados(<span class="php-var">$primeiro</span>, <span class="php-var">$numPorPagina</span>, <span class="php-var">$logFiltro</span>, <span class="php-num">1</span>, <span class="php-quote">'down'</span>, <span class="php-keyword1">false</span>);
+</span><span id="78" class="l"><a class="l" href="#78"> 78: </a><span class="php-comment">//$util-&gt;mostraObjeto($arrLogs);</span>
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>
+</span><span id="80" class="l"><a class="l" href="#80"> 80: </a><span class="php-var">$totalLogs</span> = <span class="php-var">$logC</span>-&gt;getTotalLogs(<span class="php-var">$logFiltro</span>);
+</span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment">//echo $totalLogs;</span>
+</span><span id="82" class="l"><a class="l" href="#82"> 82: </a><span class="php-comment">//die('x');</span>
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a><span class="php-var">$totalPaginas</span> = <span class="php-keyword2">ceil</span>(<span class="php-var">$totalLogs</span> / <span class="php-var">$numPorPagina</span>); <span class="php-comment">// ceil arredonda p/ maior , exemplo 1.65 sao 2 paginas</span>
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>
+</span><span id="87" class="l"><a class="l" href="#87"> 87: </a><span class="php-var">$anterior</span> = <span class="php-var">$pagina</span> - <span class="php-num">1</span>;
+</span><span id="88" class="l"><a class="l" href="#88"> 88: </a><span class="php-var">$proximo</span> = <span class="php-var">$pagina</span> + <span class="php-num">1</span>;
+</span><span id="89" class="l"><a class="l" href="#89"> 89: </a>
+</span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">//trava palhaçadas , tipo colocar um nº maior do que o total de paginas</span>
+</span><span id="91" class="l"><a class="l" href="#91"> 91: </a><span class="php-keyword1">if</span> (<span class="php-var">$pagina</span> &gt; <span class="php-var">$totalPaginas</span>) {
+</span><span id="92" class="l"><a class="l" href="#92"> 92: </a><span class="php-comment">//    header(&quot;Location:&quot; . $basePage . $totalPaginas);</span>
+</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>    <span class="php-var">$pagina</span> = <span class="php-num">1</span>;
+</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">'Sem ocorrencias com essa pesquisa:'</span>;
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>    <span class="php-var">$util</span>-&gt;mostraObjetoUser(<span class="php-var">$logFiltro</span>);
+</span><span id="96" class="l"><a class="l" href="#96"> 96: </a>
+</span><span id="97" class="l"><a class="l" href="#97"> 97: </a><span class="php-comment">//    $util-&gt;mostraObjetoUser($_GET);</span>
+</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>}
+</span><span id="99" class="l"><a class="l" href="#99"> 99: </a><span class="php-keyword2">sleep</span>(<span class="php-num">1</span>);
+</span><span id="100" class="l"><a class="l" href="#100">100: </a>
+</span><span id="101" class="l"><a class="l" href="#101">101: </a><span class="xlang">?&gt;</span>
+</span><span id="102" class="l"><a class="l" href="#102">102: </a>&lt;table&gt;
+</span><span id="103" class="l"><a class="l" href="#103">103: </a>    &lt;thead&gt;
+</span><span id="104" class="l"><a class="l" href="#104">104: </a>        &lt;tr&gt;
+</span><span id="105" class="l"><a class="l" href="#105">105: </a>            &lt;th id=<span class="php-quote">&quot;indice&quot;</span>&gt;<span class="php-comment">#&lt;/th&gt;</span>
+</span><span id="106" class="l"><a class="l" href="#106">106: </a>            &lt;th&gt;
+</span><span id="107" class="l"><a class="l" href="#107">107: </a>                &lt;input type=<span class="php-quote">&quot;checkbox&quot;</span> id=<span class="php-quote">&quot;markAll&quot;</span>&gt;
+</span><span id="108" class="l"><a class="l" href="#108">108: </a>    &lt;div id=<span class="php-quote">&quot;divLimparSelecao&quot;</span> style=<span class="php-quote">&quot;display: none;&quot;</span>&gt;
+</span><span id="109" class="l"><a class="l" href="#109">109: </a>        &lt;a href=<span class="php-quote">&quot;#&quot;</span>&gt;&lt;img src=<span class="php-quote">&quot;&lt;? echo BASE_IMAGES; ?&gt;cancel.png&quot;</span> id=<span class="php-quote">&quot;cleanAll&quot;</span> title=<span class="php-quote">&quot;Limpar seleção&quot;</span>&gt;&lt;/a&gt;
+</span><span id="110" class="l"><a class="l" href="#110">110: </a>    &lt;/div&gt;
+</span><span id="111" class="l"><a class="l" href="#111">111: </a>&lt;/th&gt;
+</span><span id="112" class="l"><a class="l" href="#112">112: </a>&lt;th&gt;id&lt;/th&gt;
+</span><span id="113" class="l"><a class="l" href="#113">113: </a>&lt;th&gt;Grupo&lt;/th&gt;
+</span><span id="114" class="l"><a class="l" href="#114">114: </a>&lt;th&gt;Data&lt;/th&gt;
+</span><span id="115" class="l"><a class="l" href="#115">115: </a>&lt;th&gt;Usuário&lt;/th&gt;
+</span><span id="116" class="l"><a class="l" href="#116">116: </a>&lt;th&gt;Ação&lt;/th&gt;
+</span><span id="117" class="l"><a class="l" href="#117">117: </a>&lt;th&gt;+info&lt;/th&gt;
+</span><span id="118" class="l"><a class="l" href="#118">118: </a>&lt;th&gt;ações&lt;/th&gt;
+</span><span id="119" class="l"><a class="l" href="#119">119: </a>&lt;/tr&gt;
+</span><span id="120" class="l"><a class="l" href="#120">120: </a>&lt;/thead&gt;
+</span><span id="121" class="l"><a class="l" href="#121">121: </a>    
+</span><span id="122" class="l"><a class="l" href="#122">122: </a>&lt;tbody id=<span class="php-quote">&quot;tbArquivos&quot;</span>&gt;
+</span><span id="123" class="l"><a class="l" href="#123">123: </a>    <span class="xlang">&lt;?</span>
+</span><span id="124" class="l"><a class="l" href="#124">124: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$totalLogs</span> &gt; <span class="php-num">0</span>) {
+</span><span id="125" class="l"><a class="l" href="#125">125: </a>        <span class="php-keyword1">for</span> (<span class="php-var">$i</span> = <span class="php-num">0</span>; <span class="php-var">$i</span> &lt; <span class="php-keyword2">count</span>(<span class="php-var">$arrLogs</span>); <span class="php-var">$i</span>++) {
+</span><span id="126" class="l"><a class="l" href="#126">126: </a><span class="php-comment">//                                $arquivo = clone($arrLogs[$i]);</span>
+</span><span id="127" class="l"><a class="l" href="#127">127: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>] <span class="php-keyword1">instanceof</span> Logger) {
+</span><span id="128" class="l"><a class="l" href="#128">128: </a><span class="php-comment">//                $filename = $arrLogs[$i]-&gt;getNome();</span>
+</span><span id="129" class="l"><a class="l" href="#129">129: </a>                <span class="php-var">$idLog</span> = <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getId();
+</span><span id="130" class="l"><a class="l" href="#130">130: </a>                <span class="xlang">?&gt;</span>
+</span><span id="131" class="l"><a class="l" href="#131">131: </a>                &lt;tr <span class="xlang">&lt;?</span>
+</span><span id="132" class="l"><a class="l" href="#132">132: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$i</span> % <span class="php-num">2</span> == <span class="php-num">0</span>) {
+</span><span id="133" class="l"><a class="l" href="#133">133: </a>                <span class="php-keyword1">echo</span> <span class="php-quote">&quot;class=\&quot;alt\&quot;&quot;</span>;
+</span><span id="134" class="l"><a class="l" href="#134">134: </a>            }
+</span><span id="135" class="l"><a class="l" href="#135">135: </a>                <span class="xlang">?&gt;</span>&gt;
+</span><span id="136" class="l"><a class="l" href="#136">136: </a>                    &lt;td  style=<span class="php-quote">&quot;font-size: 100%;&quot;</span> id=<span class="php-quote">&quot;indice&quot;</span>&gt;<span class="xlang">&lt;?</span>
+</span><span id="137" class="l"><a class="l" href="#137">137: </a>            <span class="php-keyword1">echo</span> (<span class="php-var">$i</span> + <span class="php-num">1</span> + (<span class="php-var">$numPorPagina</span> * <span class="php-var">$pagina</span>) - <span class="php-var">$numPorPagina</span>);
+</span><span id="138" class="l"><a class="l" href="#138">138: </a>
+</span><span id="139" class="l"><a class="l" href="#139">139: </a>                <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="140" class="l"><a class="l" href="#140">140: </a>                    &lt;td&gt;&lt;input type=<span class="php-quote">&quot;checkbox&quot;</span> name=<span class="php-quote">&quot;logs[]&quot;</span> id=<span class="php-quote">&quot;log&quot;</span> value=<span class="php-quote">&quot;&lt;? echo </span><span class="php-var">$idLog</span><span class="php-quote">; ?&gt;&quot;</span>&gt;&lt;/td&gt;
+</span><span id="141" class="l"><a class="l" href="#141">141: </a>                    &lt;td&gt;<span class="xlang">&lt;?</span>  <span class="php-keyword1">echo</span> <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getId();    <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="142" class="l"><a class="l" href="#142">142: </a>                    &lt;td&gt;<span class="xlang">&lt;?</span>  <span class="php-keyword1">echo</span> <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getGrupoNome();    <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="143" class="l"><a class="l" href="#143">143: </a>                    &lt;td&gt;<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getData();        <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="144" class="l"><a class="l" href="#144">144: </a>                    &lt;td&gt;<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getUsuarioNome(); <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="145" class="l"><a class="l" href="#145">145: </a>                    &lt;td&gt;<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$arrLogs</span>[<span class="php-var">$i</span>]-&gt;getAcaoNome(); <span class="xlang">?&gt;</span>&lt;/td&gt;
+</span><span id="146" class="l"><a class="l" href="#146">146: </a>                    &lt;td&gt;&lt;a href=<span class="php-quote">&quot;#&quot;</span> title=<span class="php-quote">&quot;&lt;? echo </span><span class="php-var">$arrLogs</span><span class="php-quote">[</span><span class="php-var">$i</span><span class="php-quote">]-&gt;getObjectStored(); ?&gt;&quot;</span>&gt;<span class="php-comment">#&lt;/a&gt;&lt;/td&gt;</span>
+</span><span id="147" class="l"><a class="l" href="#147">147: </a>                    &lt;td <span class="php-keyword1">class</span>=<span class="php-quote">&quot;actions&quot;</span>&gt;
+</span><span id="148" class="l"><a class="l" href="#148">148: </a>                        <span class="xlang">&lt;?</span>
+</span><span id="149" class="l"><a class="l" href="#149">149: </a>
+</span><span id="150" class="l"><a class="l" href="#150">150: </a>                        <span class="php-var">$nivelArquivos</span> = <span class="php-var">$_SESSION</span>[<span class="php-quote">'usuario'</span>][<span class="php-quote">'nivel'</span>];
+</span><span id="151" class="l"><a class="l" href="#151">151: </a>                        <span class="php-var">$testPemissao</span>=(<span class="php-var">$nivelArquivos</span> &gt; <span class="php-num">1</span> || <span class="php-var">$_SESSION</span>[<span class="php-quote">'usuario'</span>][<span class="php-quote">'id_grupo'</span>] == <span class="php-num">2</span>)?<span class="php-keyword1">true</span>:<span class="php-keyword1">false</span>;
+</span><span id="152" class="l"><a class="l" href="#152">152: </a>                        <span class="php-keyword1">if</span> (<span class="php-var">$testPemissao</span>) {<span class="php-comment">//habilita grupo 2 também</span>
+</span><span id="153" class="l"><a class="l" href="#153">153: </a>                            <span class="xlang">?&gt;</span>
+</span><span id="154" class="l"><a class="l" href="#154">154: </a>                            &lt;a href=<span class="php-quote">&quot;#&quot;</span> id=<span class="php-quote">&quot;linkRemoveForm&quot;</span> onclick=<span class="php-quote">&quot;jQuery.fn.removeLog(&lt;? echo </span><span class="php-var">$idLog</span><span class="php-quote"> . &quot;</span>,<span class="php-quote">&quot; . </span><span class="php-var">$idLog</span><span class="php-quote"> ; ?&gt;);&quot;</span>&gt;
+</span><span id="155" class="l"><a class="l" href="#155">155: </a>                                &lt;img src=<span class="php-quote">&quot;&lt;? echo BASE_IMAGES; ?&gt;b_drop.png&quot;</span> alt=<span class="php-quote">&quot;Excluir&quot;</span> title=<span class="php-quote">&quot;Excluir Log&quot;</span> width=<span class="php-quote">&quot;16&quot;</span> height=<span class="php-quote">&quot;16&quot;</span> border=<span class="php-quote">&quot;0&quot;</span> /&gt;
+</span><span id="156" class="l"><a class="l" href="#156">156: </a>                            &lt;/a&gt;
+</span><span id="157" class="l"><a class="l" href="#157">157: </a>                        <span class="xlang">&lt;?</span> } <span class="xlang">?&gt;</span>   
+</span><span id="158" class="l"><a class="l" href="#158">158: </a>                    &lt;/td&gt;
+</span><span id="159" class="l"><a class="l" href="#159">159: </a>                &lt;/tr&gt;
+</span><span id="160" class="l"><a class="l" href="#160">160: </a>                <span class="xlang">&lt;?</span>
+</span><span id="161" class="l"><a class="l" href="#161">161: </a>            }<span class="php-comment">//end if </span>
+</span><span id="162" class="l"><a class="l" href="#162">162: </a>        }<span class="php-comment">//end for </span>
+</span><span id="163" class="l"><a class="l" href="#163">163: </a>    }
+</span><span id="164" class="l"><a class="l" href="#164">164: </a>    <span class="xlang">?&gt;</span>
+</span><span id="165" class="l"><a class="l" href="#165">165: </a>&lt;input type=<span class="php-quote">&quot;hidden&quot;</span> name=<span class="php-quote">&quot;paginaAtual&quot;</span> value=<span class="php-quote">&quot;&lt;? echo </span><span class="php-var">$pagina</span><span class="php-quote">; ?&gt;&quot;</span>&gt;
+</span><span id="166" class="l"><a class="l" href="#166">166: </a>
+</span><span id="167" class="l"><a class="l" href="#167">167: </a>&lt;tfoot&gt;
+</span><span id="168" class="l"><a class="l" href="#168">168: </a>    &lt;tr&gt;
+</span><span id="169" class="l"><a class="l" href="#169">169: </a>        &lt;td colspan=<span class="php-quote">&quot;10&quot;</span>&gt;
+</span><span id="170" class="l"><a class="l" href="#170">170: </a>            &lt;div style=<span class="php-quote">&quot;padding: 6px 6px 6px 6px;&quot;</span>&gt;
+</span><span id="171" class="l"><a class="l" href="#171">171: </a>                &lt;a&gt;Total de itens:<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$totalLogs</span>; <span class="xlang">?&gt;</span>&lt;/a&gt;
+</span><span id="172" class="l"><a class="l" href="#172">172: </a>                <span class="xlang">&lt;?</span> <span class="php-keyword1">if</span> (<span class="php-var">$testPemissao</span>) { <span class="xlang">?&gt;</span>
+</span><span id="173" class="l"><a class="l" href="#173">173: </a>                    &lt;button id=<span class="php-quote">&quot;removerSelecionados&quot;</span> <span class="php-keyword1">class</span>=<span class="php-quote">&quot;botaoMenor&quot;</span> type=<span class="php-quote">&quot;button&quot;</span> style=<span class="php-quote">&quot;alignment-baseline: middle;width: 200px;padding: 0px 0px 0px 0px;&quot;</span>&gt;
+</span><span id="174" class="l"><a class="l" href="#174">174: </a>                        &lt;img src=<span class="php-quote">&quot;&lt;? echo BASE_IMAGES; ?&gt;b_drop.png&quot;</span> alt=<span class="php-quote">&quot;Excluir Selecionados&quot;</span> title=<span class="php-quote">&quot;Excluir Logs Selecionados&quot;</span> width=<span class="php-quote">&quot;16&quot;</span> height=<span class="php-quote">&quot;16&quot;</span> border=<span class="php-quote">&quot;0&quot;</span> /&gt;
+</span><span id="175" class="l"><a class="l" href="#175">175: </a>                        Remover Selecionados&lt;/button&gt;
+</span><span id="176" class="l"><a class="l" href="#176">176: </a>                    &lt;input type=<span class="php-quote">&quot;hidden&quot;</span> name=<span class="php-quote">&quot;log[exclusao]&quot;</span> value=<span class="php-quote">&quot;true&quot;</span>&gt;
+</span><span id="177" class="l"><a class="l" href="#177">177: </a>                <span class="xlang">&lt;?</span> } <span class="xlang">?&gt;</span>
+</span><span id="178" class="l"><a class="l" href="#178">178: </a>            &lt;/div&gt;
+</span><span id="179" class="l"><a class="l" href="#179">179: </a>
+</span><span id="180" class="l"><a class="l" href="#180">180: </a>        &lt;/td&gt;
+</span><span id="181" class="l"><a class="l" href="#181">181: </a>    &lt;/tr&gt;
+</span><span id="182" class="l"><a class="l" href="#182">182: </a>    &lt;tr&gt;
+</span><span id="183" class="l"><a class="l" href="#183">183: </a>        &lt;td colspan=<span class="php-quote">&quot;10&quot;</span>&gt;
+</span><span id="184" class="l"><a class="l" href="#184">184: </a>            &lt;div id=<span class="php-quote">&quot;paging&quot;</span>&gt;
+</span><span id="185" class="l"><a class="l" href="#185">185: </a>
+</span><span id="186" class="l"><a class="l" href="#186">186: </a>                &lt;ul&gt;
+</span><span id="187" class="l"><a class="l" href="#187">187: </a>                    <span class="xlang">&lt;?</span> <span class="php-keyword1">if</span> (<span class="php-var">$pagina</span> &gt; <span class="php-num">1</span>) { <span class="xlang">?&gt;</span>
+</span><span id="188" class="l"><a class="l" href="#188">188: </a>                        &lt;li&gt;
+</span><span id="189" class="l"><a class="l" href="#189">189: </a>                            &lt;a href=<span class="php-quote">&quot;#&quot;</span> onclick=<span class="php-quote">&quot;jQuery.fn.atualizaTabela(&lt;? echo (</span><span class="php-var">$anterior</span><span class="php-quote">) . &quot;</span>,<span class="php-quote">&quot; . </span><span class="php-var">$numPorPagina</span><span class="php-quote">; ?&gt;);&quot;</span> &gt;&lt;span&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;/a&gt;
+</span><span id="190" class="l"><a class="l" href="#190">190: </a>                        &lt;/li&gt;
+</span><span id="191" class="l"><a class="l" href="#191">191: </a>                    <span class="xlang">&lt;?</span> } <span class="xlang">?&gt;</span>
+</span><span id="192" class="l"><a class="l" href="#192">192: </a>                    <span class="xlang">&lt;?</span> <span class="php-keyword1">for</span> (<span class="php-var">$i</span> = <span class="php-num">1</span>; <span class="php-var">$i</span> &lt;= <span class="php-var">$totalPaginas</span>; <span class="php-var">$i</span>++) { <span class="xlang">?&gt;</span>
+</span><span id="193" class="l"><a class="l" href="#193">193: </a>                        <span class="xlang">&lt;?</span> <span class="php-comment">/* &lt;li&gt;&lt;a href=&quot;#&quot; &lt;? $i==$pagina ?'class=&quot;active&quot;': ''; ?&gt; &gt;&lt;span&gt;&lt;? echo $i;?&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; */</span> <span class="xlang">?&gt;</span>
+</span><span id="194" class="l"><a class="l" href="#194">194: </a>                        <span class="xlang">&lt;?</span> <span class="php-keyword1">if</span> (<span class="php-var">$i</span> == <span class="php-var">$pagina</span>) { <span class="xlang">?&gt;</span>
+</span><span id="195" class="l"><a class="l" href="#195">195: </a>                            &lt;li  <span class="php-keyword1">class</span>=<span class="php-quote">&quot;active&quot;</span>&gt;&lt;span&gt;<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$i</span>; <span class="xlang">?&gt;</span>&lt;/span&gt;&lt;/li&gt;
+</span><span id="196" class="l"><a class="l" href="#196">196: </a>
+</span><span id="197" class="l"><a class="l" href="#197">197: </a>                        <span class="xlang">&lt;?</span> } <span class="php-keyword1">else</span> { <span class="xlang">?&gt;</span>
+</span><span id="198" class="l"><a class="l" href="#198">198: </a>                            &lt;li&gt;&lt;a href=<span class="php-quote">&quot;#&quot;</span> onclick=<span class="php-quote">&quot; jQuery.fn.atualizaTabela(&lt;? echo </span><span class="php-var">$i</span><span class="php-quote"> . &quot;</span>,<span class="php-quote">&quot; . </span><span class="php-var">$numPorPagina</span><span class="php-quote">; ?&gt;);&quot;</span>&gt;&lt;span&gt;<span class="xlang">&lt;?</span> <span class="php-keyword1">echo</span> <span class="php-var">$i</span>; <span class="xlang">?&gt;</span>&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+</span><span id="199" class="l"><a class="l" href="#199">199: </a>                        <span class="xlang">&lt;?</span>
+</span><span id="200" class="l"><a class="l" href="#200">200: </a>                        }
+</span><span id="201" class="l"><a class="l" href="#201">201: </a>                    }
+</span><span id="202" class="l"><a class="l" href="#202">202: </a>                    <span class="xlang">?&gt;</span>
+</span><span id="203" class="l"><a class="l" href="#203">203: </a>                    <span class="xlang">&lt;?</span> <span class="php-keyword1">if</span> ((<span class="php-var">$pagina</span> != <span class="php-var">$totalPaginas</span>) &amp;&amp; (<span class="php-var">$pagina</span> &lt; <span class="php-var">$totalPaginas</span>)) { <span class="xlang">?&gt;</span>
+</span><span id="204" class="l"><a class="l" href="#204">204: </a>                        &lt;li&gt;
+</span><span id="205" class="l"><a class="l" href="#205">205: </a>                            &lt;a href=<span class="php-quote">&quot;#&quot;</span> onclick=<span class="php-quote">&quot;jQuery.fn.atualizaTabela(&lt;? echo (</span><span class="php-var">$proximo</span><span class="php-quote">) . &quot;</span>,<span class="php-quote">&quot; . </span><span class="php-var">$numPorPagina</span><span class="php-quote">; ?&gt;);&quot;</span>&gt;&lt;span&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;
+</span><span id="206" class="l"><a class="l" href="#206">206: </a>                        &lt;/li&gt;
+</span><span id="207" class="l"><a class="l" href="#207">207: </a>                    <span class="xlang">&lt;?</span> } <span class="xlang">?&gt;</span>
+</span><span id="208" class="l"><a class="l" href="#208">208: </a>                &lt;/ul&gt;
+</span><span id="209" class="l"><a class="l" href="#209">209: </a>            &lt;/div&gt;
+</span><span id="210" class="l"><a class="l" href="#210">210: </a>    &lt;/tr&gt;
+</span><span id="211" class="l"><a class="l" href="#211">211: </a>&lt;/tfoot&gt;            
+</span><span id="212" class="l"><a class="l" href="#212">212: </a>&lt;/tbody&gt;
+</span><span id="213" class="l"><a class="l" href="#213">213: </a>&lt;/table&gt;
+</span><span id="214" class="l"><a class="l" href="#214">214: </a>&lt;script language=<span class="php-quote">&quot;javascript&quot;</span>&gt;
+</span><span id="215" class="l"><a class="l" href="#215">215: </a>    <span class="php-var">$</span>(document).ready(<span class="php-keyword1">function</span>(){ 
+</span><span id="216" class="l"><a class="l" href="#216">216: </a>        <span class="php-var">$</span>(<span class="php-quote">'#markAll'</span>).click(<span class="php-keyword1">function</span>(){
+</span><span id="217" class="l"><a class="l" href="#217">217: </a>            <span class="php-var">$</span>(<span class="php-quote">'input[type=checkbox]'</span>).<span class="php-keyword2">each</span>(<span class="php-keyword1">function</span>(){
+</span><span id="218" class="l"><a class="l" href="#218">218: </a>                <span class="php-var">$</span>(this).attr(<span class="php-quote">'checked'</span>, <span class="php-keyword1">true</span>);
+</span><span id="219" class="l"><a class="l" href="#219">219: </a>            })
+</span><span id="220" class="l"><a class="l" href="#220">220: </a>            <span class="php-var">$</span>(<span class="php-quote">'#divLimparSelecao'</span>).slideDown();
+</span><span id="221" class="l"><a class="l" href="#221">221: </a>        })
+</span><span id="222" class="l"><a class="l" href="#222">222: </a>        <span class="php-var">$</span>(<span class="php-quote">'#cleanAll'</span>).click(<span class="php-keyword1">function</span>(){
+</span><span id="223" class="l"><a class="l" href="#223">223: </a>            <span class="php-var">$</span>(<span class="php-quote">'input[type=checkbox]'</span>).<span class="php-keyword2">each</span>(<span class="php-keyword1">function</span>(){
+</span><span id="224" class="l"><a class="l" href="#224">224: </a>                <span class="php-var">$</span>(this).attr(<span class="php-quote">'checked'</span>, <span class="php-keyword1">false</span>);
+</span><span id="225" class="l"><a class="l" href="#225">225: </a>            })
+</span><span id="226" class="l"><a class="l" href="#226">226: </a>            <span class="php-var">$</span>(<span class="php-quote">'#divLimparSelecao'</span>).slideUp();
+</span><span id="227" class="l"><a class="l" href="#227">227: </a>        })
+</span><span id="228" class="l"><a class="l" href="#228">228: </a>               
+</span><span id="229" class="l"><a class="l" href="#229">229: </a> 
+</span><span id="230" class="l"><a class="l" href="#230">230: </a>        
+</span><span id="231" class="l"><a class="l" href="#231">231: </a>        
+</span><span id="232" class="l"><a class="l" href="#232">232: </a>        <span class="php-var">$</span>(<span class="php-quote">'#removerSelecionados'</span>).click(<span class="php-keyword1">function</span>(){
+</span><span id="233" class="l"><a class="l" href="#233">233: </a>            <span class="php-comment">//            alert($('#exclusao:checked').size());</span>
+</span><span id="234" class="l"><a class="l" href="#234">234: </a>            <span class="php-keyword1">if</span>(<span class="php-var">$</span>(<span class="php-quote">'#log:checked'</span>).size() == <span class="php-num">0</span>){
+</span><span id="235" class="l"><a class="l" href="#235">235: </a>                alert(<span class="php-quote">'Selecione algum log para excluir'</span>);
+</span><span id="236" class="l"><a class="l" href="#236">236: </a>            }<span class="php-keyword1">else</span> {
+</span><span id="237" class="l"><a class="l" href="#237">237: </a>                <span class="php-keyword1">var</span> valores = <span class="php-quote">&quot;&quot;</span>;
+</span><span id="238" class="l"><a class="l" href="#238">238: </a>                <span class="php-var">$</span>(<span class="php-quote">'#log:checked'</span>).<span class="php-keyword2">each</span>(<span class="php-keyword1">function</span>(){
+</span><span id="239" class="l"><a class="l" href="#239">239: </a>                    valores+=<span class="php-var">$</span>(this).val()+<span class="php-quote">' , '</span>;
+</span><span id="240" class="l"><a class="l" href="#240">240: </a>                })
+</span><span id="241" class="l"><a class="l" href="#241">241: </a>                
+</span><span id="242" class="l"><a class="l" href="#242">242: </a>                <span class="php-keyword1">if</span> (confirm(<span class="php-quote">'Deseja excluir os logs :\n'</span> + valores + <span class="php-quote">'?'</span>)){
+</span><span id="243" class="l"><a class="l" href="#243">243: </a>                    <span class="php-var">$</span>(<span class="php-quote">'#formFiles'</span>).submit();
+</span><span id="244" class="l"><a class="l" href="#244">244: </a>                }
+</span><span id="245" class="l"><a class="l" href="#245">245: </a>            }})
+</span><span id="246" class="l"><a class="l" href="#246">246: </a>        
+</span><span id="247" class="l"><a class="l" href="#247">247: </a>
+</span><span id="248" class="l"><a class="l" href="#248">248: </a>    })
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>&lt;/script&gt;
+</span><span id="250" class="l"><a class="l" href="#250">250: </a></span></code></pre>
+
+	<div id="footer">
+		delageUploadsMVC API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

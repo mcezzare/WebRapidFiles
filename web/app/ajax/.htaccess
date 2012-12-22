@@ -1,0 +1,4 @@
+Options +Includes -Indexes
+<Limit POST GET>
+
+</Limit>
